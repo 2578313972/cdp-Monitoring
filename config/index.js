@@ -21,27 +21,27 @@ module.exports = {
                     }
                 }
             */
-           '/cdp-web': {
-            target: 'http://192.168.19.183',
-            secure: false,
-            changeOrigin: true, // 是否跨域
-            pathRewrite: {
-                '^/cdp-web': '/cdp-web'
+            '/cdp-web': {
+                target: 'http://192.168.19.183',
+                secure: false,
+                changeOrigin: true, // 是否跨域
+                pathRewrite: {
+                    '^/cdp-web': '/cdp-web'
+                },
+                headers: {
+                    Cookie: 'cdp-session-id=9272615B69906BD464C0891915A0837F;', // JSESSIONID=937286E9B4F243A175F01CAF77582418;
+                    Referer: 'localhost/cdp/',
+                    Host: '192.168.19.183'
+                }
             },
-            headers: {
-                Cookie: 'cdp-session-id=2B09F15760148358968BC7D283F4FE45;', // JSESSIONID=937286E9B4F243A175F01CAF77582418;
-                Referer: 'localhost/cdp/',
-                Host: '192.168.19.183'
+            '/monitor': {
+                target: 'http://192.168.19.187:8888',
+                secure: false,
+                changeOrigin: true, // 是否跨域
+                pathRewrite: {
+                    '^/monitor': '/monitor'
+                }
             }
-        },
-        '/monitor': {
-            target: 'http://192.168.19.187:8888',
-            secure: false,
-            changeOrigin: true, // 是否跨域
-            pathRewrite: {
-                '^/monitor': '/monitor'
-            }
-        }
         },
 
         // Various Dev Server settings
